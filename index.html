@@ -31,714 +31,107 @@
       --max: 1120px;
       --radius: 8px;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--brown);
-      background:
-        linear-gradient(180deg, var(--cream) 0, var(--white) 460px),
-        var(--white);
-      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
-      line-height: 1.9;
-      letter-spacing: 0;
-    }
+    body { margin: 0; color: var(--brown); background: linear-gradient(180deg, var(--cream) 0, var(--white) 460px), var(--white); font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; line-height: 1.9; letter-spacing: 0; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
     p { margin: 0; color: var(--brown-soft); }
     .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
-
-    .notice {
-      background: var(--brown);
-      color: #fff;
-      font-size: 13px;
-      font-weight: 800;
-      text-align: center;
-      padding: 8px 14px;
-    }
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      background: rgba(255, 254, 253, .92);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(16px);
-    }
-    .nav {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-    }
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--brown);
-      font-weight: 900;
-    }
-    .logo-mark {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--pink-soft);
-      border: 1px solid rgba(74, 45, 31, .22);
-      color: var(--brown);
-      font-size: 13px;
-      font-weight: 900;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      color: var(--brown-soft);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 11px 20px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: #fff;
-      color: var(--brown);
-      font-weight: 900;
-      line-height: 1.35;
-      text-align: center;
-      box-shadow: 0 10px 22px rgba(74, 45, 31, .08);
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-    .button:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(74, 45, 31, .14); }
+    .notice { background: var(--brown); color: #fff; font-size: 13px; font-weight: 800; text-align: center; padding: 8px 14px; }
+    .site-header { position: sticky; top: 0; z-index: 30; background: rgba(255, 254, 253, .92); border-bottom: 1px solid var(--line); backdrop-filter: blur(16px); }
+    .nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .logo { display: inline-flex; align-items: center; gap: 10px; color: var(--brown); font-weight: 900; }
+    .logo-mark { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--pink-soft); border: 1px solid rgba(74,45,31,.22); color: var(--brown); font-size: 13px; font-weight: 900; }
+    .nav-links { display: flex; align-items: center; gap: 22px; color: var(--brown-soft); font-size: 14px; font-weight: 800; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 11px 20px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--brown); font-weight: 900; line-height: 1.35; text-align: center; box-shadow: 0 10px 22px rgba(74,45,31,.08); transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(74,45,31,.14); }
     .button.primary { background: var(--brown); border-color: var(--brown); color: #fff; }
-    .button.pink { background: var(--pink-soft); border-color: rgba(230, 179, 169, .64); }
+    .button.pink { background: var(--pink-soft); border-color: rgba(230,179,169,.64); }
     .button.light { background: #fffaf5; }
-    .button.ghost { background: rgba(255, 255, 255, .16); border-color: rgba(255,255,255,.42); color: #fff; }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 78vh;
-      display: grid;
-      align-items: center;
-      padding: 70px 0 118px;
-      background:
-        linear-gradient(90deg, rgba(255, 248, 239, .98) 0%, rgba(255, 248, 239, .92) 47%, rgba(255, 248, 239, .62) 100%),
-        url("assets/tomomin-hero.jpg") center right / cover no-repeat;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 120px;
-      background: linear-gradient(180deg, transparent, var(--cream));
-      pointer-events: none;
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      padding: 7px 14px;
-      border: 1px solid rgba(201, 164, 138, .5);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .82);
-      color: var(--heading-pink);
-      font-size: 13px;
-      font-weight: 900;
-    }
-    h1, h2, h3 { color: var(--brown); letter-spacing: 0; }
-    h1 {
-      margin: 20px 0 14px;
-      font-size: clamp(44px, 8vw, 78px);
-      line-height: 1.08;
-    }
-    h2 {
-      margin: 8px 0 12px;
-      font-size: clamp(29px, 4vw, 44px);
-      line-height: 1.32;
-    }
-    h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      line-height: 1.45;
-    }
-    .lead {
-      margin: 0 0 18px;
-      color: var(--brown);
-      font-size: clamp(19px, 2.4vw, 25px);
-      font-weight: 900;
-    }
-    .hero-copy {
-      max-width: 650px;
-      margin: 0 0 28px;
-      font-size: 16px;
-    }
+    .button.ghost { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.42); color: #fff; }
+    .hero { position: relative; overflow: hidden; min-height: 78vh; display: grid; align-items: center; padding: 70px 0 118px; background: linear-gradient(120deg, var(--cream) 0%, var(--pink-pale) 58%, var(--peach) 100%); }
+    .hero::after { content: ""; position: absolute; inset: auto 0 0; height: 120px; background: linear-gradient(180deg, transparent, var(--cream)); pointer-events: none; }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; }
+    .eyebrow { display: inline-flex; align-items: center; padding: 7px 14px; border: 1px solid rgba(201,164,138,.5); border-radius: 999px; background: rgba(255,255,255,.82); color: var(--heading-pink); font-size: 13px; font-weight: 900; }
+    h1,h2,h3 { color: var(--brown); letter-spacing: 0; }
+    h1 { margin: 20px 0 14px; font-size: clamp(44px,8vw,78px); line-height: 1.08; }
+    h2 { margin: 8px 0 12px; font-size: clamp(29px,4vw,44px); line-height: 1.32; }
+    h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.45; }
+    .lead { margin: 0 0 18px; color: var(--brown); font-size: clamp(19px,2.4vw,25px); font-weight: 900; }
+    .hero-copy { max-width: 650px; margin: 0 0 28px; font-size: 16px; }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-
-    .quick-menu {
-      position: relative;
-      z-index: 2;
-      margin-top: -78px;
-      padding-bottom: 68px;
-    }
-    .quick-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-    .quick-card {
-      display: grid;
-      gap: 18px;
-      min-height: 300px;
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, .96);
-      box-shadow: var(--shadow);
-    }
-    .quick-card.body-care { background: linear-gradient(180deg, #fff, #fff7ed); }
-    .quick-card.uranai { background: linear-gradient(180deg, #fff, var(--pink-pale)); }
-    .label {
-      width: fit-content;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: var(--cream);
-      color: var(--heading-pink);
-      font-size: 12px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-    .quick-card ul {
-      display: grid;
-      gap: 6px;
-      margin: 0;
-      padding-left: 1.2em;
-      color: var(--brown-soft);
-      font-weight: 700;
-    }
+    .quick-menu { position: relative; z-index: 2; margin-top: -78px; padding-bottom: 68px; }
+    .quick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .quick-card { display: grid; gap: 18px; min-height: 300px; padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.96); box-shadow: var(--shadow); }
+    .quick-card.body-care { background: linear-gradient(180deg,#fff,#fff7ed); }
+    .quick-card.uranai { background: linear-gradient(180deg,#fff,var(--pink-pale)); }
+    .label { width: fit-content; padding: 5px 10px; border-radius: 999px; background: var(--cream); color: var(--heading-pink); font-size: 12px; font-weight: 900; text-transform: uppercase; }
+    .quick-card ul { display: grid; gap: 6px; margin: 0; padding-left: 1.2em; color: var(--brown-soft); font-weight: 700; }
     .quick-actions { display: flex; flex-wrap: wrap; gap: 10px; align-self: end; }
-
     section { padding: 72px 0; }
-    .section-head {
-      max-width: 780px;
-      margin: 0 auto 34px;
-      text-align: center;
-    }
-    .kicker {
-      color: var(--heading-pink);
-      font-size: 12px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-    .soft-bg { background: linear-gradient(180deg, #fff, var(--cream)); }
-    .pink-bg { background: linear-gradient(180deg, var(--pink-pale), #fff); }
-
-    .feature-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-    .feature {
-      min-height: 120px;
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fff;
-      box-shadow: 0 12px 28px rgba(74, 45, 31, .07);
-    }
-    .feature span {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--heading-pink);
-      font-size: 12px;
-      font-weight: 900;
-    }
+    .section-head { max-width: 780px; margin: 0 auto 34px; text-align: center; }
+    .kicker { color: var(--heading-pink); font-size: 12px; font-weight: 900; text-transform: uppercase; }
+    .soft-bg { background: linear-gradient(180deg,#fff,var(--cream)); }
+    .pink-bg { background: linear-gradient(180deg,var(--pink-pale),#fff); }
+    .feature-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .feature { min-height: 120px; padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: 0 12px 28px rgba(74,45,31,.07); }
+    .feature span { display: block; margin-bottom: 6px; color: var(--heading-pink); font-size: 12px; font-weight: 900; }
     .feature strong { display: block; font-size: 18px; line-height: 1.5; }
-
-    .two-column {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-    .panel, .service-card, .link-card, .profile-copy, .flow-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fff;
-      box-shadow: 0 14px 34px rgba(74, 45, 31, .08);
-    }
+    .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .panel,.service-card,.link-card,.profile-copy,.flow-card { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: 0 14px 34px rgba(74,45,31,.08); }
     .panel { padding: 30px; }
-    .panel p + p { margin-top: 12px; }
-    .accent-line {
-      width: 52px;
-      height: 3px;
-      margin: 18px 0;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--peach), var(--pink));
-    }
+    .panel p+p { margin-top: 12px; }
+    .accent-line { width: 52px; height: 3px; margin: 18px 0; border-radius: 999px; background: linear-gradient(90deg,var(--peach),var(--pink)); }
     .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-    .tag {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: var(--cream);
-      color: var(--brown-soft);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .service-grid, .link-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .service-card, .link-card { padding: 24px; }
+    .tag { padding: 6px 10px; border-radius: 999px; background: var(--cream); color: var(--brown-soft); font-size: 13px; font-weight: 800; }
+    .service-grid,.link-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .service-card,.link-card { padding: 24px; }
     .service-card { min-height: 218px; border-top: 5px solid var(--peach); }
     .service-card.pink-top { border-top-color: var(--pink); }
     .num { color: var(--heading-pink); font-size: 12px; font-weight: 900; margin-bottom: 8px; }
-    .service-card p, .link-card p { font-size: 15px; }
-
-    .recommend-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 28px;
-    }
-    .recommend-item {
-      min-height: 66px;
-      display: flex;
-      align-items: center;
-      padding: 14px 16px;
-      border: 1px solid rgba(74, 45, 31, .12);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, .86);
-      color: var(--brown-soft);
-      font-weight: 800;
-    }
-
-    .brand-guide-card {
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(240px, 1.1fr);
-      gap: 24px;
-      align-items: center;
-      margin-top: 28px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fff;
-      box-shadow: 0 14px 34px rgba(74, 45, 31, .08);
-    }
-    .swatches {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 18px;
-    }
-    .brand-notes {
-      display: grid;
-      gap: 10px;
-    }
-    .brand-note {
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--cream);
-      color: var(--brown-soft);
-      font-weight: 800;
-    }
-    .swatch {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      border: 1px solid rgba(74, 45, 31, .14);
-    }
-    .swatch.brown { background: #4a2d1f; }
-    .swatch.pink { background: #f7a7b5; }
-    .swatch.cream { background: #fff7f0; }
-    .swatch.peach { background: #fbd9c7; }
-    .swatch.lavender { background: #dccef4; }
-    .swatch.mint { background: #bfe8d8; }
-    .swatch.sora { background: #dceeff; }
-
-    .flow-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
+    .service-card p,.link-card p { font-size: 15px; }
+    .recommend-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 28px; }
+    .recommend-item { min-height: 66px; display: flex; align-items: center; padding: 14px 16px; border: 1px solid rgba(74,45,31,.12); border-radius: var(--radius); background: rgba(255,255,255,.86); color: var(--brown-soft); font-weight: 800; }
+    .brand-guide-card { display: grid; grid-template-columns: minmax(0,.9fr) minmax(240px,1.1fr); gap: 24px; align-items: center; margin-top: 28px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: 0 14px 34px rgba(74,45,31,.08); }
+    .swatches { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+    .brand-notes { display: grid; gap: 10px; }
+    .brand-note { padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--cream); color: var(--brown-soft); font-weight: 800; }
+    .swatch { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(74,45,31,.14); }
+    .swatch.brown{background:#4a2d1f}.swatch.pink{background:#f7a7b5}.swatch.cream{background:#fff7f0}.swatch.peach{background:#fbd9c7}.swatch.lavender{background:#dccef4}.swatch.mint{background:#bfe8d8}.swatch.sora{background:#dceeff}
+    .flow-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
     .flow-card { padding: 22px 18px; border-top: 4px solid var(--pink); }
-    .flow-card span {
-      display: grid;
-      place-items: center;
-      width: 36px;
-      height: 36px;
-      margin-bottom: 14px;
-      border-radius: 50%;
-      background: var(--pink-soft);
-      color: var(--heading-pink);
-      font-size: 13px;
-      font-weight: 900;
-    }
-    .flow-card h3 { font-size: 18px; }
-    .flow-card p { font-size: 14px; }
-
-    .link-card {
-      display: grid;
-      gap: 14px;
-      min-height: 248px;
-      align-content: start;
-    }
-    .link-card .button { align-self: end; margin-top: auto; }
-
-    .profile {
-      display: grid;
-      grid-template-columns: .92fr 1.08fr;
-      gap: 28px;
-      align-items: center;
-    }
-    .profile-visual {
-      min-height: 360px;
-      border-radius: 16px;
-      background:
-        linear-gradient(140deg, rgba(74, 45, 31, .18), rgba(247, 167, 181, .12)),
-        url("assets/tomomin-profile.jpg") center / cover no-repeat;
-      box-shadow: var(--shadow);
-    }
-    .profile-copy { padding: 32px; }
-    .profile-copy p + p { margin-top: 12px; }
-    .note {
-      margin-top: 18px;
-      padding: 14px 16px;
-      border-left: 4px solid var(--pink);
-      background: var(--cream);
-      color: var(--brown-soft);
-      font-size: 14px;
-    }
-
-    .contact {
-      padding: 76px 0 88px;
-      background: linear-gradient(135deg, var(--brown), #7b5f55 58%, #b8877c);
-      color: #fff;
-      text-align: center;
-    }
-    .contact h2, .contact p { color: #fff; }
-    .contact p { max-width: 720px; margin: 0 auto 28px; }
-    .contact .button.primary { background: #fff; border-color: #fff; color: var(--brown); }
-    .small { color: rgba(255, 255, 255, .84); font-size: 13px; margin-top: 18px; }
-
-    .mobile-sticky { display: none; }
-    footer { padding: 28px 0; background: #342a25; color: #f3e8dd; text-align: center; font-size: 13px; }
-
-    @media (max-width: 900px) {
-      .nav { min-height: 62px; }
-      .nav-links { display: none; }
-      .hero {
-        min-height: auto;
-        padding: 50px 0 112px;
-        background:
-          linear-gradient(180deg, rgba(255, 248, 239, .98), rgba(255, 248, 239, .9)),
-          url("assets/tomomin-hero.jpg") center / cover no-repeat;
-      }
-      .quick-menu { margin-top: -72px; padding-bottom: 48px; }
-      .quick-grid, .feature-row, .two-column, .service-grid, .link-grid, .recommend-list, .flow-grid, .brand-guide-card, .profile { grid-template-columns: 1fr; }
-      section { padding: 56px 0; }
-      .profile-visual { min-height: 280px; }
-    }
-
-    @media (max-width: 560px) {
-      .notice { font-size: 12px; }
-      .wrap { width: min(100% - 28px, var(--max)); }
-      .logo span:last-child { font-size: 15px; }
-      .site-header .button { min-height: 40px; padding: 8px 12px; font-size: 13px; }
-      .hero { padding: 42px 0 108px; }
-      .hero-copy { font-size: 15px; }
-      .actions, .quick-actions { display: grid; grid-template-columns: 1fr; }
-      .button { width: 100%; white-space: normal; }
-      .quick-card, .panel, .service-card, .link-card, .profile-copy { padding: 22px; }
-      .quick-card { min-height: auto; }
-      .recommend-item { min-height: auto; }
-      .mobile-sticky {
-        position: fixed;
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        z-index: 40;
-        display: block;
-      }
-      .mobile-sticky .button { box-shadow: 0 14px 34px rgba(74, 45, 31, .24); }
-      footer { padding-bottom: 82px; }
-    }
+    .flow-card span { display: grid; place-items: center; width: 36px; height: 36px; margin-bottom: 14px; border-radius: 50%; background: var(--pink-soft); color: var(--heading-pink); font-size: 13px; font-weight: 900; }
+    .flow-card h3 { font-size: 18px; }.flow-card p { font-size: 14px; }
+    .link-card { display: grid; gap: 14px; min-height: 248px; align-content: start; }.link-card .button { align-self: end; margin-top: auto; }
+    .profile { display: grid; grid-template-columns: .92fr 1.08fr; gap: 28px; align-items: center; }
+    .profile-visual { min-height: 360px; border-radius: 16px; background: linear-gradient(35deg,var(--peach),var(--cream) 55%,var(--pink-soft)); box-shadow: var(--shadow); }
+    .profile-copy { padding: 32px; }.profile-copy p+p { margin-top: 12px; }
+    .note { margin-top: 18px; padding: 14px 16px; border-left: 4px solid var(--pink); background: var(--cream); color: var(--brown-soft); font-size: 14px; }
+    .contact { padding: 76px 0 88px; background: linear-gradient(135deg,var(--brown),#7b5f55 58%,#b8877c); color: #fff; text-align: center; }
+    .contact h2,.contact p { color:#fff }.contact p { max-width:720px;margin:0 auto 28px }.contact .button.primary { background:#fff;border-color:#fff;color:var(--brown) }.small { color:rgba(255,255,255,.84);font-size:13px;margin-top:18px }
+    .mobile-sticky{display:none}footer{padding:28px 0;background:#342a25;color:#f3e8dd;text-align:center;font-size:13px}
+    @media(max-width:900px){.nav{min-height:62px}.nav-links{display:none}.hero{min-height:auto;padding:50px 0 112px;background:linear-gradient(155deg,var(--cream),var(--pink-pale) 62%,var(--peach))}.quick-menu{margin-top:-72px;padding-bottom:48px}.quick-grid,.feature-row,.two-column,.service-grid,.link-grid,.recommend-list,.flow-grid,.brand-guide-card,.profile{grid-template-columns:1fr}section{padding:56px 0}.profile-visual{min-height:280px}}
+    @media(max-width:560px){.notice{font-size:12px}.wrap{width:min(100% - 28px,var(--max))}.logo span:last-child{font-size:15px}.site-header .button{min-height:40px;padding:8px 12px;font-size:13px}.hero{padding:42px 0 108px}.hero-copy{font-size:15px}.actions,.quick-actions{display:grid;grid-template-columns:1fr}.button{width:100%;white-space:normal}.quick-card,.panel,.service-card,.link-card,.profile-copy{padding:22px}.quick-card{min-height:auto}.recommend-item{min-height:auto}.mobile-sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:block}.mobile-sticky .button{box-shadow:0 14px 34px rgba(74,45,31,.24)}footer{padding-bottom:82px}}
   </style>
 </head>
 <body>
   <div class="notice">からだを整え、自分を知る。山口ともみんの公式HP</div>
-
-  <header class="site-header">
-    <div class="wrap nav">
-      <a class="logo" href="#top" aria-label="totonoサロントップへ"><span class="logo-mark">to</span><span>totonoサロン</span></a>
-      <nav class="nav-links" aria-label="主要メニュー">
-        <a href="#body-care">整体</a>
-        <a href="#nekomochi">ねこもち占い</a>
-        <a href="#links">リンク</a>
-        <a href="#profile">プロフィール</a>
-      </nav>
-      <a class="button primary" href="#contact">予約・問い合わせ</a>
-    </div>
-  </header>
-
+  <header class="site-header"><div class="wrap nav"><a class="logo" href="#top" aria-label="totonoサロントップへ"><span class="logo-mark">to</span><span>totonoサロン</span></a><nav class="nav-links" aria-label="主要メニュー"><a href="#body-care">整体</a><a href="#nekomochi">ねこもち占い</a><a href="#links">リンク</a><a href="#profile">プロフィール</a></nav><a class="button primary" href="#contact">予約・問い合わせ</a></div></header>
   <main id="top">
-    <section class="hero" aria-label="totonoサロンの紹介">
-      <div class="wrap hero-content">
-        <span class="eyebrow">整体・骨格調整 / ねこもち占い・数秘術</span>
-        <h1>totonoサロン</h1>
-        <p class="lead">からだも、こころも、やさしく整う場所。</p>
-        <p class="hero-copy">totonoサロンは、整体・骨格調整・トレーニングサポートと、ねこもち占い・数秘術・鑑定書による自己理解サポートを1ページで案内する公式HPです。</p>
-        <div class="actions">
-          <a class="button primary" href="#contact">予約・問い合わせする</a>
-          <a class="button pink" href="#quick-menu">2つの入口を見る</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="quick-menu" class="quick-menu" aria-label="整体とねこもち占いの入口">
-      <div class="wrap quick-grid">
-        <article class="quick-card body-care">
-          <div>
-            <div class="label">Body Care</div>
-            <h2>整体・骨格調整</h2>
-            <p>肩こり、腰痛、姿勢、骨盤まわり、体型変化など。今のからだに合わせて、動きやすさと軽さを目指します。</p>
-          </div>
-          <ul>
-            <li>整体・骨格調整</li>
-            <li>骨盤ケア</li>
-            <li>トレーニングサポート</li>
-          </ul>
-          <div class="quick-actions">
-            <a class="button primary" href="https://www.instagram.com/tomomi_body_support">Instagramを見る</a>
-            <a class="button light" href="#body-care">詳しく見る</a>
-          </div>
-        </article>
-
-        <article class="quick-card uranai">
-          <div>
-            <div class="label">Nekomochi</div>
-            <h2>ねこもち占い</h2>
-            <p>数秘術をベースに、12匹のねこで本質・強み・本音・使命を読み解き、自分の扱い方を知るサポートです。</p>
-          </div>
-          <ul>
-            <li>数秘術・12匹のねこ</li>
-            <li>鑑定書・自己理解</li>
-            <li>相性・親子・仕事の相談</li>
-          </ul>
-          <div class="quick-actions">
-            <a class="button primary" href="https://tomominblog.github.io/nekomochi-uranai/">ねこもちHPへ</a>
-            <a class="button light" href="https://note.com/nekomochi_uranai">noteを読む</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section aria-label="totonoサロンの特徴">
-      <div class="wrap feature-row">
-        <div class="feature"><span>01</span><strong>がんばりすぎない、やさしい整え方。</strong></div>
-        <div class="feature"><span>02</span><strong>からだとこころ、両方から見つめる。</strong></div>
-        <div class="feature"><span>03</span><strong>はじめてでも相談しやすい導線。</strong></div>
-      </div>
-    </section>
-
-    <section id="about" class="pink-bg">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">Concept</div>
-          <h2>整えることは、自分に戻ること。</h2>
-          <p>からだのクセと、こころ・個性のクセをどちらも見つめながら、毎日を少しラクにする整え方を一緒に見つけます。</p>
-        </div>
-        <div class="two-column">
-          <article class="panel">
-            <h3>からだのサインを丁寧に見る</h3>
-            <div class="accent-line"></div>
-            <p>肩こり、腰痛、姿勢の崩れ、骨盤まわりの違和感など、日々の積み重ねで出てきたサインに寄り添います。</p>
-            <p>施術だけで終わらせず、呼吸・姿勢・動き方まで含めて、戻りにくいからだづくりをサポートします。</p>
-            <div class="tag-row"><span class="tag">整体</span><span class="tag">骨格調整</span><span class="tag">骨盤ケア</span><span class="tag">運動</span></div>
-          </article>
-          <article class="panel">
-            <h3>自分の扱い方をやさしく知る</h3>
-            <div class="accent-line"></div>
-            <p>ねこもち占いは、数秘術をベースにした「12匹のねこ」で自分を知るオリジナル占いです。</p>
-            <p>本質・強み・使命・本音・見た目の印象を読み解き、人間関係や働き方のモヤモヤをほどくヒントをお届けします。</p>
-            <div class="tag-row"><span class="tag">ねこもち占い</span><span class="tag">数秘術</span><span class="tag">鑑定書</span><span class="tag">自己理解</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="soft-bg">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">For You</div>
-          <h2>こんなときに、お立ち寄りください。</h2>
-          <p>大きな悩みになる前の、少し気になる段階でも大丈夫です。</p>
-        </div>
-        <div class="recommend-list">
-          <div class="recommend-item">肩・首・腰の重だるさを整えたい</div>
-          <div class="recommend-item">姿勢や骨盤まわりが気になる</div>
-          <div class="recommend-item">運動したいけれど、何から始めればいいかわからない</div>
-          <div class="recommend-item">年齢や産後の体型変化に寄り添ってほしい</div>
-          <div class="recommend-item">自分の強みや本質を知りたい</div>
-          <div class="recommend-item">家族・夫婦・職場の人間関係をラクにしたい</div>
-          <div class="recommend-item">鑑定書で自分の特徴を落ち着いて読みたい</div>
-          <div class="recommend-item">からだもこころも、やさしく整えたい</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="body-care">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">Body Care</div>
-          <h2>整体・骨格調整・トレーニングサポート</h2>
-          <p>その日の状態に合わせて、からだの軽さと動きやすさを目指します。</p>
-        </div>
-        <div class="service-grid">
-          <article class="service-card"><div class="num">01</div><h3>整体・骨格調整</h3><p>肩こり、腰痛、姿勢の崩れなど、今のからだの状態に合わせて無理なく整えます。</p></article>
-          <article class="service-card"><div class="num">02</div><h3>骨盤ケア</h3><p>骨盤まわりの違和感、下半身の重さ、産後や年齢による変化に寄り添います。</p></article>
-          <article class="service-card"><div class="num">03</div><h3>やさしい運動</h3><p>呼吸や体幹を意識した、続けやすい動きで整った状態を保つ力を育てます。</p></article>
-        </div>
-        <div class="actions" style="justify-content:center;margin-top:30px">
-          <a class="button primary" href="https://www.instagram.com/tomomi_body_support">整体Instagramを見る</a>
-          <a class="button pink" href="#contact">予約・問い合わせする</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="nekomochi" class="pink-bg">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">Nekomochi Uranai</div>
-          <h2>ねこもち占い・数秘術・鑑定書</h2>
-          <p>「当てる」より「ほどく」。数秘術と12匹のねこで、本質・強み・本音・人間関係を読み解きます。</p>
-        </div>
-        <div class="service-grid">
-          <article class="service-card pink-top"><div class="num">FREE</div><h3>本質のねこ診断</h3><p>生年月日から、あなたの奥に住む「本質のねこ」を無料で診断できます。</p></article>
-          <article class="service-card pink-top"><div class="num">PDF</div><h3>5匹の総合鑑定</h3><p>本質・強み・使命・本音・見た目の印象をPDF鑑定書で読み解きます。</p></article>
-          <article class="service-card pink-top"><div class="num">PAIR</div><h3>相性・親子・仕事</h3><p>夫婦、親子、職場、お金や働き方など、関係性や才能の見え方を整えます。</p></article>
-        </div>
-        <div class="brand-guide-card">
-          <div>
-            <div class="label">Brand Color</div>
-            <h3>ねこもち占いのブランドカラー</h3>
-            <p>メインカラーはあたたかいブラウン、アクセントはソフトピンク。写真のやさしい空気感と合わせて、安心して読める雰囲気に整えています。</p>
-            <div class="swatches" aria-label="ブランドカラーパレット">
-              <span class="swatch brown"></span>
-              <span class="swatch pink"></span>
-              <span class="swatch cream"></span>
-              <span class="swatch peach"></span>
-              <span class="swatch lavender"></span>
-              <span class="swatch mint"></span>
-              <span class="swatch sora"></span>
-            </div>
-          </div>
-          <div class="brand-notes" aria-label="ねこもち占いの大切にしたい印象">
-            <div class="brand-note">やさしく、わかりやすく、親しみやすい</div>
-            <div class="brand-note">余白を大切にして、安心して読める</div>
-            <div class="brand-note">かわいさの中に信頼感を残す</div>
-          </div>
-        </div>
-        <div class="actions" style="justify-content:center;margin-top:30px">
-          <a class="button primary" href="https://tomominblog.github.io/nekomochi-uranai/">ねこもちHPへ</a>
-          <a class="button light" href="https://note.com/nekomochi_uranai">noteを読む</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="links">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">Links</div>
-          <h2>目的別リンク</h2>
-          <p>整体の様子、ねこもち占いの詳細、読みものを迷わず見られるように整理しました。</p>
-        </div>
-        <div class="link-grid">
-          <article class="link-card">
-            <div class="label">Body</div>
-            <h3>整体 Instagram</h3>
-            <p>整体・骨格調整・トレーニングサポートの雰囲気や最新情報はこちら。</p>
-            <a class="button primary" href="https://www.instagram.com/tomomi_body_support">Instagramを開く</a>
-          </article>
-          <article class="link-card">
-            <div class="label">Nekomochi HP</div>
-            <h3>ねこもち占い HP</h3>
-            <p>本質のねこ診断や鑑定メニューなど、ねこもち占いの案内はこちら。</p>
-            <a class="button primary" href="https://tomominblog.github.io/nekomochi-uranai/">HPを開く</a>
-          </article>
-          <article class="link-card">
-            <div class="label">Note</div>
-            <h3>ねこもち占い note</h3>
-            <p>ねこもち占いの考え方、12匹のねこ、自己理解の読みものはこちら。</p>
-            <a class="button primary" href="https://note.com/nekomochi_uranai">noteを開く</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="soft-bg">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="kicker">Flow</div>
-          <h2>ご利用の流れ</h2>
-        </div>
-        <div class="flow-grid">
-          <div class="flow-card"><span>01</span><h3>入口を選ぶ</h3><p>整体でからだから整えるか、ねこもち占いで自分を知るか、今の目的に合わせて選べます。</p></div>
-          <div class="flow-card"><span>02</span><h3>リンク先を見る</h3><p>整体はInstagram、ねこもち占いは公式HPやnoteで詳細を確認できます。</p></div>
-          <div class="flow-card"><span>03</span><h3>相談する</h3><p>予約や問い合わせは、ページ内のボタンから気軽に進められます。</p></div>
-          <div class="flow-card"><span>04</span><h3>整え方を決める</h3><p>今の状態や目的に合わせて、日常に持ち帰れる整え方を一緒に見つけます。</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="profile">
-      <div class="wrap profile">
-        <div class="profile-visual" role="img" aria-label="落ち着いたサロンケアのイメージ"></div>
-        <div class="profile-copy">
-          <div class="kicker">Profile</div>
-          <h2>山口ともみん</h2>
-          <p>整体とトレーニングでからだを整えるサポートをしながら、数秘術をベースにした「ねこもち占い」を届けています。</p>
-          <p>からだの不調も、こころのモヤモヤも、無理にがんばるだけでは整わないことがあります。大切なのは、今の自分を知ること。そして、自分に合う整え方を見つけること。</p>
-          <p>totonoサロンでは、からだとこころの両方から、あなたが少しラクに過ごせる毎日をサポートします。</p>
-          <div class="note">初めての方にも、今の状態やご希望を確認しながら、その日のペースに合わせて進めます。</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="wrap">
-        <div class="kicker" style="color:rgba(255,255,255,.78)">Contact</div>
-        <h2>予約・問い合わせ</h2>
-        <p>整体の予約や相談はInstagramへ。ねこもち占いの詳細は公式HP・noteから確認できます。どちらに進めばいいか迷う方も、まずは気軽にご相談ください。</p>
-        <div class="actions" style="justify-content:center">
-          <a class="button primary" href="https://www.instagram.com/tomomi_body_support">整体Instagramへ</a>
-          <a class="button ghost" href="https://tomominblog.github.io/nekomochi-uranai/">ねこもちHPへ</a>
-          <a class="button ghost" href="https://note.com/nekomochi_uranai">noteへ</a>
-        </div>
-        <p class="small">※整体・トレーニングサポートは医療行為ではありません。強い痛みや症状がある場合は、医療機関への相談もご検討ください。</p>
-      </div>
-    </section>
+    <section class="hero" aria-label="totonoサロンの紹介"><div class="wrap hero-content"><span class="eyebrow">整体・骨格調整 / ねこもち占い・数秘術</span><h1>totonoサロン</h1><p class="lead">からだも、こころも、やさしく整う場所。</p><p class="hero-copy">totonoサロンは、整体・骨格調整・トレーニングサポートと、ねこもち占い・数秘術・鑑定書による自己理解サポートを1ページで案内する公式HPです。</p><div class="actions"><a class="button primary" href="#contact">予約・問い合わせする</a><a class="button pink" href="#quick-menu">2つの入口を見る</a></div></div></section>
+    <section id="quick-menu" class="quick-menu" aria-label="整体とねこもち占いの入口"><div class="wrap quick-grid"><article class="quick-card body-care"><div><div class="label">Body Care</div><h2>整体・骨格調整</h2><p>肩こり、腰痛、姿勢、骨盤まわり、体型変化など。今のからだに合わせて、動きやすさと軽さを目指します。</p></div><ul><li>整体・骨格調整</li><li>骨盤ケア</li><li>トレーニングサポート</li></ul><div class="quick-actions"><a class="button primary" href="https://www.instagram.com/tomomi_body_support">Instagramを見る</a><a class="button light" href="#body-care">詳しく見る</a></div></article><article class="quick-card uranai"><div><div class="label">Nekomochi</div><h2>ねこもち占い</h2><p>数秘術をベースに、12匹のねこで本質・強み・本音・使命を読み解き、自分の扱い方を知るサポートです。</p></div><ul><li>数秘術・12匹のねこ</li><li>鑑定書・自己理解</li><li>相性・親子・仕事の相談</li></ul><div class="quick-actions"><a class="button primary" href="https://tomominblog.github.io/nekomochi-uranai/">ねこもちHPへ</a><a class="button light" href="https://note.com/nekomochi_uranai">noteを読む</a></div></article></div></section>
+    <section aria-label="totonoサロンの特徴"><div class="wrap feature-row"><div class="feature"><span>01</span><strong>がんばりすぎない、やさしい整え方。</strong></div><div class="feature"><span>02</span><strong>からだとこころ、両方から見つめる。</strong></div><div class="feature"><span>03</span><strong>はじめてでも相談しやすい導線。</strong></div></div></section>
+    <section id="about" class="pink-bg"><div class="wrap"><div class="section-head"><div class="kicker">Concept</div><h2>整えることは、自分に戻ること。</h2><p>からだのクセと、こころ・個性のクセをどちらも見つめながら、毎日を少しラクにする整え方を一緒に見つけます。</p></div><div class="two-column"><article class="panel"><h3>からだのサインを丁寧に見る</h3><div class="accent-line"></div><p>肩こり、腰痛、姿勢の崩れ、骨盤まわりの違和感など、日々の積み重ねで出てきたサインに寄り添います。</p><p>施術だけで終わらせず、呼吸・姿勢・動き方まで含めて、戻りにくいからだづくりをサポートします。</p><div class="tag-row"><span class="tag">整体</span><span class="tag">骨格調整</span><span class="tag">骨盤ケア</span><span class="tag">運動</span></div></article><article class="panel"><h3>自分の扱い方をやさしく知る</h3><div class="accent-line"></div><p>ねこもち占いは、数秘術をベースにした「12匹のねこ」で自分を知るオリジナル占いです。</p><p>本質・強み・使命・本音・見た目の印象を読み解き、人間関係や働き方のモヤモヤをほどくヒントをお届けします。</p><div class="tag-row"><span class="tag">ねこもち占い</span><span class="tag">数秘術</span><span class="tag">鑑定書</span><span class="tag">自己理解</span></div></article></div></div></section>
+    <section class="soft-bg"><div class="wrap"><div class="section-head"><div class="kicker">For You</div><h2>こんなときに、お立ち寄りください。</h2><p>大きな悩みになる前の、少し気になる段階でも大丈夫です。</p></div><div class="recommend-list"><div class="recommend-item">肩・首・腰の重だるさを整えたい</div><div class="recommend-item">姿勢や骨盤まわりが気になる</div><div class="recommend-item">運動したいけれど、何から始めればいいかわからない</div><div class="recommend-item">年齢や産後の体型変化に寄り添ってほしい</div><div class="recommend-item">自分の強みや本質を知りたい</div><div class="recommend-item">家族・夫婦・職場の人間関係をラクにしたい</div><div class="recommend-item">鑑定書で自分の特徴を落ち着いて読みたい</div><div class="recommend-item">からだもこころも、やさしく整えたい</div></div></div></section>
+    <section id="body-care"><div class="wrap"><div class="section-head"><div class="kicker">Body Care</div><h2>整体・骨格調整・トレーニングサポート</h2><p>その日の状態に合わせて、からだの軽さと動きやすさを目指します。</p></div><div class="service-grid"><article class="service-card"><div class="num">01</div><h3>整体・骨格調整</h3><p>肩こり、腰痛、姿勢の崩れなど、今のからだの状態に合わせて無理なく整えます。</p></article><article class="service-card"><div class="num">02</div><h3>骨盤ケア</h3><p>骨盤まわりの違和感、下半身の重さ、産後や年齢による変化に寄り添います。</p></article><article class="service-card"><div class="num">03</div><h3>やさしい運動</h3><p>呼吸や体幹を意識した、続けやすい動きで整った状態を保つ力を育てます。</p></article></div><div class="actions" style="justify-content:center;margin-top:30px"><a class="button primary" href="https://www.instagram.com/tomomi_body_support">整体Instagramを見る</a><a class="button pink" href="#contact">予約・問い合わせする</a></div></div></section>
+    <section id="nekomochi" class="pink-bg"><div class="wrap"><div class="section-head"><div class="kicker">Nekomochi Uranai</div><h2>ねこもち占い・数秘術・鑑定書</h2><p>「当てる」より「ほどく」。数秘術と12匹のねこで、本質・強み・本音・人間関係を読み解きます。</p></div><div class="service-grid"><article class="service-card pink-top"><div class="num">FREE</div><h3>本質のねこ診断</h3><p>生年月日から、あなたの奥に住む「本質のねこ」を無料で診断できます。</p></article><article class="service-card pink-top"><div class="num">PDF</div><h3>5匹の総合鑑定</h3><p>本質・強み・使命・本音・見た目の印象をPDF鑑定書で読み解きます。</p></article><article class="service-card pink-top"><div class="num">PAIR</div><h3>相性・親子・仕事</h3><p>夫婦、親子、職場、お金や働き方など、関係性や才能の見え方を整えます。</p></article></div><div class="brand-guide-card"><div><div class="label">Brand Color</div><h3>ねこもち占いのブランドカラー</h3><p>メインカラーはあたたかいブラウン、アクセントはソフトピンク。やさしい空気感と合わせて、安心して読める雰囲気に整えています。</p><div class="swatches" aria-label="ブランドカラーパレット"><span class="swatch brown"></span><span class="swatch pink"></span><span class="swatch cream"></span><span class="swatch peach"></span><span class="swatch lavender"></span><span class="swatch mint"></span><span class="swatch sora"></span></div></div><div class="brand-notes" aria-label="ねこもち占いの大切にしたい印象"><div class="brand-note">やさしく、わかりやすく、親しみやすい</div><div class="brand-note">余白を大切にして、安心して読める</div><div class="brand-note">かわいさの中に信頼感を残す</div></div></div><div class="actions" style="justify-content:center;margin-top:30px"><a class="button primary" href="https://tomominblog.github.io/nekomochi-uranai/">ねこもちHPへ</a><a class="button light" href="https://note.com/nekomochi_uranai">noteを読む</a></div></div></section>
+    <section id="links"><div class="wrap"><div class="section-head"><div class="kicker">Links</div><h2>目的別リンク</h2><p>整体の様子、ねこもち占いの詳細、読みものを迷わず見られるように整理しました。</p></div><div class="link-grid"><article class="link-card"><div class="label">Body</div><h3>整体 Instagram</h3><p>整体・骨格調整・トレーニングサポートの雰囲気や最新情報はこちら。</p><a class="button primary" href="https://www.instagram.com/tomomi_body_support">Instagramを開く</a></article><article class="link-card"><div class="label">Nekomochi HP</div><h3>ねこもち占い HP</h3><p>本質のねこ診断や鑑定メニューなど、ねこもち占いの案内はこちら。</p><a class="button primary" href="https://tomominblog.github.io/nekomochi-uranai/">HPを開く</a></article><article class="link-card"><div class="label">Note</div><h3>ねこもち占い note</h3><p>ねこもち占いの考え方、12匹のねこ、自己理解の読みものはこちら。</p><a class="button primary" href="https://note.com/nekomochi_uranai">noteを開く</a></article></div></div></section>
+    <section class="soft-bg"><div class="wrap"><div class="section-head"><div class="kicker">Flow</div><h2>ご利用の流れ</h2></div><div class="flow-grid"><div class="flow-card"><span>01</span><h3>入口を選ぶ</h3><p>整体でからだから整えるか、ねこもち占いで自分を知るか、今の目的に合わせて選べます。</p></div><div class="flow-card"><span>02</span><h3>リンク先を見る</h3><p>整体はInstagram、ねこもち占いは公式HPやnoteで詳細を確認できます。</p></div><div class="flow-card"><span>03</span><h3>相談する</h3><p>予約や問い合わせは、ページ内のボタンから気軽に進められます。</p></div><div class="flow-card"><span>04</span><h3>整え方を決める</h3><p>今の状態や目的に合わせて、日常に持ち帰れる整え方を一緒に見つけます。</p></div></div></div></section>
+    <section id="profile"><div class="wrap profile"><div class="profile-visual" role="img" aria-label="ブランドカラーを使ったやさしい背景"></div><div class="profile-copy"><div class="kicker">Profile</div><h2>山口ともみん</h2><p>整体とトレーニングでからだを整えるサポートをしながら、数秘術をベースにした「ねこもち占い」を届けています。</p><p>からだの不調も、こころのモヤモヤも、無理にがんばるだけでは整わないことがあります。大切なのは、今の自分を知ること。そして、自分に合う整え方を見つけること。</p><p>totonoサロンでは、からだとこころの両方から、あなたが少しラクに過ごせる毎日をサポートします。</p><div class="note">初めての方にも、今の状態やご希望を確認しながら、その日のペースに合わせて進めます。</div></div></div></section>
+    <section id="contact" class="contact"><div class="wrap"><div class="kicker" style="color:rgba(255,255,255,.78)">Contact</div><h2>予約・問い合わせ</h2><p>整体の予約や相談はInstagramへ。ねこもち占いの詳細は公式HP・noteから確認できます。どちらに進めばいいか迷う方も、まずは気軽にご相談ください。</p><div class="actions" style="justify-content:center"><a class="button primary" href="https://www.instagram.com/tomomi_body_support">整体Instagramへ</a><a class="button ghost" href="https://tomominblog.github.io/nekomochi-uranai/">ねこもちHPへ</a><a class="button ghost" href="https://note.com/nekomochi_uranai">noteへ</a></div><p class="small">※整体・トレーニングサポートは医療行為ではありません。強い痛みや症状がある場合は、医療機関への相談もご検討ください。</p></div></section>
   </main>
-
-  <div class="mobile-sticky" aria-label="スマホ用予約導線">
-    <a class="button primary" href="#contact">予約・問い合わせ</a>
-  </div>
-
-  <footer>
-    <div class="wrap">© 2026 totonoサロン / 山口ともみん</div>
-  </footer>
+  <div class="mobile-sticky" aria-label="スマホ用予約導線"><a class="button primary" href="#contact">予約・問い合わせ</a></div>
+  <footer><div class="wrap">© 2026 totonoサロン / 山口ともみん</div></footer>
 </body>
 </html>
