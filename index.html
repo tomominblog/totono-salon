@@ -10,19 +10,24 @@
   <meta property="og:type" content="website">
   <style>
     :root {
-      --white: #fffefd;
-      --cream: #fff8ef;
-      --kinari: #f8eddf;
-      --beige: #ead7c1;
-      --beige-deep: #c9a48a;
-      --pink: #e6b3a9;
-      --pink-soft: #fae7e1;
-      --pink-pale: #fff2ee;
-      --brown: #503f35;
-      --brown-soft: #766257;
-      --brown-pale: #9a8477;
-      --line: rgba(80, 63, 53, .16);
-      --shadow: 0 18px 42px rgba(80, 63, 53, .11);
+      --white: #ffffff;
+      --cream: #fff7f0;
+      --kinari: #fff7f0;
+      --peach: #fbd9c7;
+      --lavender: #dccef4;
+      --mint: #bfe8d8;
+      --sora: #dceeff;
+      --yellow: #f7e088;
+      --light-gray: #eae7e4;
+      --pink: #f7a7b5;
+      --pink-soft: #ffe8ed;
+      --pink-pale: #fff2f4;
+      --heading-pink: #e98ba4;
+      --brown: #4a2d1f;
+      --brown-soft: #6b625c;
+      --brown-pale: #8b7b72;
+      --line: rgba(74, 45, 31, .15);
+      --shadow: 0 18px 42px rgba(74, 45, 31, .1);
       --max: 1120px;
       --radius: 8px;
     }
@@ -81,7 +86,7 @@
       place-items: center;
       border-radius: 50%;
       background: var(--pink-soft);
-      border: 1px solid rgba(80, 63, 53, .22);
+      border: 1px solid rgba(74, 45, 31, .22);
       color: var(--brown);
       font-size: 13px;
       font-weight: 900;
@@ -108,10 +113,10 @@
       font-weight: 900;
       line-height: 1.35;
       text-align: center;
-      box-shadow: 0 10px 22px rgba(80, 63, 53, .08);
+      box-shadow: 0 10px 22px rgba(74, 45, 31, .08);
       transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
-    .button:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(80, 63, 53, .14); }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(74, 45, 31, .14); }
     .button.primary { background: var(--brown); border-color: var(--brown); color: #fff; }
     .button.pink { background: var(--pink-soft); border-color: rgba(230, 179, 169, .64); }
     .button.light { background: #fffaf5; }
@@ -126,7 +131,7 @@
       padding: 70px 0 118px;
       background:
         linear-gradient(90deg, rgba(255, 248, 239, .98) 0%, rgba(255, 248, 239, .92) 47%, rgba(255, 248, 239, .62) 100%),
-        url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80") center right / cover no-repeat;
+        url("assets/tomomin-hero.jpg") center right / cover no-repeat;
     }
     .hero::after {
       content: "";
@@ -148,7 +153,7 @@
       border: 1px solid rgba(201, 164, 138, .5);
       border-radius: 999px;
       background: rgba(255, 255, 255, .82);
-      color: #8f6a5a;
+      color: var(--heading-pink);
       font-size: 13px;
       font-weight: 900;
     }
@@ -208,8 +213,8 @@
       width: fit-content;
       padding: 5px 10px;
       border-radius: 999px;
-      background: var(--kinari);
-      color: #8d695a;
+      background: var(--cream);
+      color: var(--heading-pink);
       font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
@@ -231,12 +236,12 @@
       text-align: center;
     }
     .kicker {
-      color: #a06f65;
+      color: var(--heading-pink);
       font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
     }
-    .soft-bg { background: linear-gradient(180deg, #fff, var(--kinari)); }
+    .soft-bg { background: linear-gradient(180deg, #fff, var(--cream)); }
     .pink-bg { background: linear-gradient(180deg, var(--pink-pale), #fff); }
 
     .feature-row {
@@ -250,12 +255,12 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: #fff;
-      box-shadow: 0 12px 28px rgba(80, 63, 53, .07);
+      box-shadow: 0 12px 28px rgba(74, 45, 31, .07);
     }
     .feature span {
       display: block;
       margin-bottom: 6px;
-      color: #a06f65;
+      color: var(--heading-pink);
       font-size: 12px;
       font-weight: 900;
     }
@@ -270,7 +275,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: #fff;
-      box-shadow: 0 14px 34px rgba(80, 63, 53, .08);
+      box-shadow: 0 14px 34px rgba(74, 45, 31, .08);
     }
     .panel { padding: 30px; }
     .panel p + p { margin-top: 12px; }
@@ -279,13 +284,13 @@
       height: 3px;
       margin: 18px 0;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--beige-deep), var(--pink));
+      background: linear-gradient(90deg, var(--peach), var(--pink));
     }
     .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
     .tag {
       padding: 6px 10px;
       border-radius: 999px;
-      background: var(--kinari);
+      background: var(--cream);
       color: var(--brown-soft);
       font-size: 13px;
       font-weight: 800;
@@ -297,9 +302,9 @@
       gap: 18px;
     }
     .service-card, .link-card { padding: 24px; }
-    .service-card { min-height: 218px; border-top: 5px solid var(--beige-deep); }
+    .service-card { min-height: 218px; border-top: 5px solid var(--peach); }
     .service-card.pink-top { border-top-color: var(--pink); }
-    .num { color: #a06f65; font-size: 12px; font-weight: 900; margin-bottom: 8px; }
+    .num { color: var(--heading-pink); font-size: 12px; font-weight: 900; margin-bottom: 8px; }
     .service-card p, .link-card p { font-size: 15px; }
 
     .recommend-list {
@@ -313,12 +318,56 @@
       display: flex;
       align-items: center;
       padding: 14px 16px;
-      border: 1px solid rgba(80, 63, 53, .12);
+      border: 1px solid rgba(74, 45, 31, .12);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, .86);
       color: var(--brown-soft);
       font-weight: 800;
     }
+
+    .brand-guide-card {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(240px, 1.1fr);
+      gap: 24px;
+      align-items: center;
+      margin-top: 28px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 14px 34px rgba(74, 45, 31, .08);
+    }
+    .swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+    .brand-notes {
+      display: grid;
+      gap: 10px;
+    }
+    .brand-note {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--cream);
+      color: var(--brown-soft);
+      font-weight: 800;
+    }
+    .swatch {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(74, 45, 31, .14);
+    }
+    .swatch.brown { background: #4a2d1f; }
+    .swatch.pink { background: #f7a7b5; }
+    .swatch.cream { background: #fff7f0; }
+    .swatch.peach { background: #fbd9c7; }
+    .swatch.lavender { background: #dccef4; }
+    .swatch.mint { background: #bfe8d8; }
+    .swatch.sora { background: #dceeff; }
 
     .flow-grid {
       display: grid;
@@ -334,7 +383,7 @@
       margin-bottom: 14px;
       border-radius: 50%;
       background: var(--pink-soft);
-      color: #8d695a;
+      color: var(--heading-pink);
       font-size: 13px;
       font-weight: 900;
     }
@@ -359,8 +408,8 @@
       min-height: 360px;
       border-radius: 16px;
       background:
-        linear-gradient(140deg, rgba(80, 63, 53, .72), rgba(230, 179, 169, .55)),
-        url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80") center / cover no-repeat;
+        linear-gradient(140deg, rgba(74, 45, 31, .18), rgba(247, 167, 181, .12)),
+        url("assets/tomomin-profile.jpg") center / cover no-repeat;
       box-shadow: var(--shadow);
     }
     .profile-copy { padding: 32px; }
@@ -369,7 +418,7 @@
       margin-top: 18px;
       padding: 14px 16px;
       border-left: 4px solid var(--pink);
-      background: var(--kinari);
+      background: var(--cream);
       color: var(--brown-soft);
       font-size: 14px;
     }
@@ -396,10 +445,10 @@
         padding: 50px 0 112px;
         background:
           linear-gradient(180deg, rgba(255, 248, 239, .98), rgba(255, 248, 239, .9)),
-          url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80") center / cover no-repeat;
+          url("assets/tomomin-hero.jpg") center / cover no-repeat;
       }
       .quick-menu { margin-top: -72px; padding-bottom: 48px; }
-      .quick-grid, .feature-row, .two-column, .service-grid, .link-grid, .recommend-list, .flow-grid, .profile { grid-template-columns: 1fr; }
+      .quick-grid, .feature-row, .two-column, .service-grid, .link-grid, .recommend-list, .flow-grid, .brand-guide-card, .profile { grid-template-columns: 1fr; }
       section { padding: 56px 0; }
       .profile-visual { min-height: 280px; }
     }
@@ -424,7 +473,7 @@
         z-index: 40;
         display: block;
       }
-      .mobile-sticky .button { box-shadow: 0 14px 34px rgba(80, 63, 53, .24); }
+      .mobile-sticky .button { box-shadow: 0 14px 34px rgba(74, 45, 31, .24); }
       footer { padding-bottom: 82px; }
     }
   </style>
@@ -581,6 +630,27 @@
           <article class="service-card pink-top"><div class="num">FREE</div><h3>本質のねこ診断</h3><p>生年月日から、あなたの奥に住む「本質のねこ」を無料で診断できます。</p></article>
           <article class="service-card pink-top"><div class="num">PDF</div><h3>5匹の総合鑑定</h3><p>本質・強み・使命・本音・見た目の印象をPDF鑑定書で読み解きます。</p></article>
           <article class="service-card pink-top"><div class="num">PAIR</div><h3>相性・親子・仕事</h3><p>夫婦、親子、職場、お金や働き方など、関係性や才能の見え方を整えます。</p></article>
+        </div>
+        <div class="brand-guide-card">
+          <div>
+            <div class="label">Brand Color</div>
+            <h3>ねこもち占いのブランドカラー</h3>
+            <p>メインカラーはあたたかいブラウン、アクセントはソフトピンク。写真のやさしい空気感と合わせて、安心して読める雰囲気に整えています。</p>
+            <div class="swatches" aria-label="ブランドカラーパレット">
+              <span class="swatch brown"></span>
+              <span class="swatch pink"></span>
+              <span class="swatch cream"></span>
+              <span class="swatch peach"></span>
+              <span class="swatch lavender"></span>
+              <span class="swatch mint"></span>
+              <span class="swatch sora"></span>
+            </div>
+          </div>
+          <div class="brand-notes" aria-label="ねこもち占いの大切にしたい印象">
+            <div class="brand-note">やさしく、わかりやすく、親しみやすい</div>
+            <div class="brand-note">余白を大切にして、安心して読める</div>
+            <div class="brand-note">かわいさの中に信頼感を残す</div>
+          </div>
         </div>
         <div class="actions" style="justify-content:center;margin-top:30px">
           <a class="button primary" href="https://tomominblog.github.io/nekomochi-uranai/">ねこもちHPへ</a>
