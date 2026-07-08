@@ -12,16 +12,17 @@
     :root {
       --white: #fffefd;
       --cream: #fff8ef;
-      --kinari: #f7eee2;
-      --beige: #e8d6c1;
-      --beige-deep: #c9a98c;
-      --pink: #e7b8ad;
-      --pink-soft: #f8e4de;
-      --brown: #4f3f36;
-      --brown-soft: #75645b;
-      --brown-pale: #9a8679;
-      --line: rgba(79, 63, 54, .16);
-      --shadow: 0 18px 44px rgba(79, 63, 54, .12);
+      --kinari: #f8eddf;
+      --beige: #ead7c1;
+      --beige-deep: #c9a48a;
+      --pink: #e6b3a9;
+      --pink-soft: #fae7e1;
+      --pink-pale: #fff2ee;
+      --brown: #503f35;
+      --brown-soft: #766257;
+      --brown-pale: #9a8477;
+      --line: rgba(80, 63, 53, .16);
+      --shadow: 0 18px 42px rgba(80, 63, 53, .11);
       --max: 1120px;
       --radius: 8px;
     }
@@ -31,7 +32,9 @@
     body {
       margin: 0;
       color: var(--brown);
-      background: var(--white);
+      background:
+        linear-gradient(180deg, var(--cream) 0, var(--white) 460px),
+        var(--white);
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
       line-height: 1.9;
       letter-spacing: 0;
@@ -41,16 +44,24 @@
     p { margin: 0; color: var(--brown-soft); }
     .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
 
+    .notice {
+      background: var(--brown);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+      padding: 8px 14px;
+    }
     .site-header {
       position: sticky;
       top: 0;
       z-index: 30;
-      background: rgba(255, 254, 253, .9);
+      background: rgba(255, 254, 253, .92);
       border-bottom: 1px solid var(--line);
       backdrop-filter: blur(16px);
     }
     .nav {
-      min-height: 68px;
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -60,18 +71,19 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-weight: 900;
       color: var(--brown);
+      font-weight: 900;
     }
     .logo-mark {
-      width: 34px;
-      height: 34px;
+      width: 38px;
+      height: 38px;
       display: grid;
       place-items: center;
       border-radius: 50%;
-      background: var(--brown);
-      color: var(--cream);
-      font-size: 12px;
+      background: var(--pink-soft);
+      border: 1px solid rgba(80, 63, 53, .22);
+      color: var(--brown);
+      font-size: 13px;
       font-weight: 900;
     }
     .nav-links {
@@ -80,7 +92,7 @@
       gap: 22px;
       color: var(--brown-soft);
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .button {
@@ -96,58 +108,59 @@
       font-weight: 900;
       line-height: 1.35;
       text-align: center;
-      box-shadow: 0 10px 24px rgba(79, 63, 54, .08);
+      box-shadow: 0 10px 22px rgba(80, 63, 53, .08);
       transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
-    .button:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(79, 63, 54, .13); }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(80, 63, 53, .14); }
     .button.primary { background: var(--brown); border-color: var(--brown); color: #fff; }
-    .button.pink { background: var(--pink-soft); border-color: rgba(231, 184, 173, .55); }
-    .button.ghost { background: rgba(255, 255, 255, .7); }
+    .button.pink { background: var(--pink-soft); border-color: rgba(230, 179, 169, .64); }
+    .button.light { background: #fffaf5; }
+    .button.ghost { background: rgba(255, 255, 255, .16); border-color: rgba(255,255,255,.42); color: #fff; }
 
     .hero {
       position: relative;
       overflow: hidden;
-      min-height: 74vh;
+      min-height: 78vh;
       display: grid;
       align-items: center;
-      padding: 76px 0 58px;
+      padding: 70px 0 118px;
       background:
-        linear-gradient(90deg, rgba(255, 248, 239, .98) 0%, rgba(255, 248, 239, .9) 46%, rgba(255, 248, 239, .5) 100%),
+        linear-gradient(90deg, rgba(255, 248, 239, .98) 0%, rgba(255, 248, 239, .92) 47%, rgba(255, 248, 239, .62) 100%),
         url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1800&q=80") center right / cover no-repeat;
     }
     .hero::after {
       content: "";
       position: absolute;
       inset: auto 0 0;
-      height: 110px;
-      background: linear-gradient(180deg, transparent, var(--white));
+      height: 120px;
+      background: linear-gradient(180deg, transparent, var(--cream));
       pointer-events: none;
     }
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 690px;
+      max-width: 720px;
     }
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      padding: 7px 13px;
-      border: 1px solid rgba(201, 169, 140, .48);
+      padding: 7px 14px;
+      border: 1px solid rgba(201, 164, 138, .5);
       border-radius: 999px;
-      background: rgba(255, 255, 255, .78);
-      color: #8c6959;
+      background: rgba(255, 255, 255, .82);
+      color: #8f6a5a;
       font-size: 13px;
       font-weight: 900;
     }
     h1, h2, h3 { color: var(--brown); letter-spacing: 0; }
     h1 {
-      margin: 22px 0 14px;
-      font-size: clamp(40px, 7vw, 72px);
-      line-height: 1.12;
+      margin: 20px 0 14px;
+      font-size: clamp(44px, 8vw, 78px);
+      line-height: 1.08;
     }
     h2 {
       margin: 8px 0 12px;
-      font-size: clamp(28px, 4vw, 42px);
+      font-size: clamp(29px, 4vw, 44px);
       line-height: 1.32;
     }
     h3 {
@@ -158,70 +171,95 @@
     .lead {
       margin: 0 0 18px;
       color: var(--brown);
-      font-size: clamp(18px, 2.4vw, 24px);
+      font-size: clamp(19px, 2.4vw, 25px);
       font-weight: 900;
     }
     .hero-copy {
-      max-width: 620px;
+      max-width: 650px;
       margin: 0 0 28px;
       font-size: 16px;
     }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
-    .path-section {
+    .quick-menu {
       position: relative;
       z-index: 2;
-      margin-top: -34px;
-      padding-bottom: 62px;
+      margin-top: -78px;
+      padding-bottom: 68px;
     }
-    .path-grid {
+    .quick-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
-    .path-card {
+    .quick-card {
       display: grid;
       gap: 18px;
-      min-height: 310px;
+      min-height: 300px;
       padding: 30px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, .92);
+      background: rgba(255, 255, 255, .96);
       box-shadow: var(--shadow);
     }
-    .path-card.body-care { background: linear-gradient(180deg, #fff, #fff7ee); }
-    .path-card.uranai { background: linear-gradient(180deg, #fff, #fff3f0); }
-    .path-label {
+    .quick-card.body-care { background: linear-gradient(180deg, #fff, #fff7ed); }
+    .quick-card.uranai { background: linear-gradient(180deg, #fff, var(--pink-pale)); }
+    .label {
       width: fit-content;
       padding: 5px 10px;
       border-radius: 999px;
       background: var(--kinari);
-      color: #8c6959;
+      color: #8d695a;
       font-size: 12px;
       font-weight: 900;
+      text-transform: uppercase;
     }
-    .path-card ul {
+    .quick-card ul {
       display: grid;
       gap: 6px;
       margin: 0;
       padding-left: 1.2em;
       color: var(--brown-soft);
+      font-weight: 700;
     }
-    .path-actions { display: flex; flex-wrap: wrap; gap: 10px; align-self: end; }
+    .quick-actions { display: flex; flex-wrap: wrap; gap: 10px; align-self: end; }
 
     section { padding: 72px 0; }
     .section-head {
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto 34px;
       text-align: center;
     }
     .kicker {
-      color: #9a6c61;
+      color: #a06f65;
       font-size: 12px;
       font-weight: 900;
       text-transform: uppercase;
     }
     .soft-bg { background: linear-gradient(180deg, #fff, var(--kinari)); }
+    .pink-bg { background: linear-gradient(180deg, var(--pink-pale), #fff); }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .feature {
+      min-height: 120px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(80, 63, 53, .07);
+    }
+    .feature span {
+      display: block;
+      margin-bottom: 6px;
+      color: #a06f65;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .feature strong { display: block; font-size: 18px; line-height: 1.5; }
 
     .two-column {
       display: grid;
@@ -232,12 +270,12 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: #fff;
-      box-shadow: 0 14px 34px rgba(79, 63, 54, .08);
+      box-shadow: 0 14px 34px rgba(80, 63, 53, .08);
     }
     .panel { padding: 30px; }
     .panel p + p { margin-top: 12px; }
     .accent-line {
-      width: 48px;
+      width: 52px;
       height: 3px;
       margin: 18px 0;
       border-radius: 999px;
@@ -259,9 +297,9 @@
       gap: 18px;
     }
     .service-card, .link-card { padding: 24px; }
-    .service-card { min-height: 220px; border-top: 5px solid var(--beige-deep); }
+    .service-card { min-height: 218px; border-top: 5px solid var(--beige-deep); }
     .service-card.pink-top { border-top-color: var(--pink); }
-    .num { color: #9a6c61; font-size: 12px; font-weight: 900; margin-bottom: 8px; }
+    .num { color: #a06f65; font-size: 12px; font-weight: 900; margin-bottom: 8px; }
     .service-card p, .link-card p { font-size: 15px; }
 
     .recommend-list {
@@ -275,9 +313,9 @@
       display: flex;
       align-items: center;
       padding: 14px 16px;
-      border: 1px solid rgba(79, 63, 54, .12);
+      border: 1px solid rgba(80, 63, 53, .12);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, .84);
+      background: rgba(255, 255, 255, .86);
       color: var(--brown-soft);
       font-weight: 800;
     }
@@ -296,7 +334,7 @@
       margin-bottom: 14px;
       border-radius: 50%;
       background: var(--pink-soft);
-      color: #8c6959;
+      color: #8d695a;
       font-size: 13px;
       font-weight: 900;
     }
@@ -306,7 +344,7 @@
     .link-card {
       display: grid;
       gap: 14px;
-      min-height: 245px;
+      min-height: 248px;
       align-content: start;
     }
     .link-card .button { align-self: end; margin-top: auto; }
@@ -321,7 +359,7 @@
       min-height: 360px;
       border-radius: 16px;
       background:
-        linear-gradient(140deg, rgba(79, 63, 54, .72), rgba(231, 184, 173, .55)),
+        linear-gradient(140deg, rgba(80, 63, 53, .72), rgba(230, 179, 169, .55)),
         url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80") center / cover no-repeat;
       box-shadow: var(--shadow);
     }
@@ -338,14 +376,13 @@
 
     .contact {
       padding: 76px 0 88px;
-      background: linear-gradient(135deg, var(--brown), #7b5f55 56%, #b8877c);
+      background: linear-gradient(135deg, var(--brown), #7b5f55 58%, #b8877c);
       color: #fff;
       text-align: center;
     }
     .contact h2, .contact p { color: #fff; }
     .contact p { max-width: 720px; margin: 0 auto 28px; }
     .contact .button.primary { background: #fff; border-color: #fff; color: var(--brown); }
-    .contact .button.ghost { color: #fff; border-color: rgba(255,255,255,.42); background: rgba(255,255,255,.16); }
     .small { color: rgba(255, 255, 255, .84); font-size: 13px; margin-top: 18px; }
 
     .mobile-sticky { display: none; }
@@ -356,27 +393,28 @@
       .nav-links { display: none; }
       .hero {
         min-height: auto;
-        padding: 54px 0 72px;
+        padding: 50px 0 112px;
         background:
-          linear-gradient(180deg, rgba(255, 248, 239, .97), rgba(255, 248, 239, .9)),
+          linear-gradient(180deg, rgba(255, 248, 239, .98), rgba(255, 248, 239, .9)),
           url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80") center / cover no-repeat;
       }
-      .path-section { margin-top: -44px; padding-bottom: 48px; }
-      .path-grid, .two-column, .service-grid, .link-grid, .recommend-list, .flow-grid, .profile { grid-template-columns: 1fr; }
+      .quick-menu { margin-top: -72px; padding-bottom: 48px; }
+      .quick-grid, .feature-row, .two-column, .service-grid, .link-grid, .recommend-list, .flow-grid, .profile { grid-template-columns: 1fr; }
       section { padding: 56px 0; }
       .profile-visual { min-height: 280px; }
     }
 
     @media (max-width: 560px) {
+      .notice { font-size: 12px; }
       .wrap { width: min(100% - 28px, var(--max)); }
       .logo span:last-child { font-size: 15px; }
       .site-header .button { min-height: 40px; padding: 8px 12px; font-size: 13px; }
-      .hero { padding: 42px 0 68px; }
+      .hero { padding: 42px 0 108px; }
       .hero-copy { font-size: 15px; }
-      .actions, .path-actions { display: grid; grid-template-columns: 1fr; }
+      .actions, .quick-actions { display: grid; grid-template-columns: 1fr; }
       .button { width: 100%; white-space: normal; }
-      .path-card, .panel, .service-card, .link-card, .profile-copy { padding: 22px; }
-      .path-card { min-height: auto; }
+      .quick-card, .panel, .service-card, .link-card, .profile-copy { padding: 22px; }
+      .quick-card { min-height: auto; }
       .recommend-item { min-height: auto; }
       .mobile-sticky {
         position: fixed;
@@ -386,12 +424,14 @@
         z-index: 40;
         display: block;
       }
-      .mobile-sticky .button { box-shadow: 0 14px 34px rgba(79, 63, 54, .24); }
+      .mobile-sticky .button { box-shadow: 0 14px 34px rgba(80, 63, 53, .24); }
       footer { padding-bottom: 82px; }
     }
   </style>
 </head>
 <body>
+  <div class="notice">からだを整え、自分を知る。山口ともみんの公式HP</div>
+
   <header class="site-header">
     <div class="wrap nav">
       <a class="logo" href="#top" aria-label="totonoサロントップへ"><span class="logo-mark">to</span><span>totonoサロン</span></a>
@@ -408,22 +448,22 @@
   <main id="top">
     <section class="hero" aria-label="totonoサロンの紹介">
       <div class="wrap hero-content">
-        <span class="eyebrow">山口ともみんの公式HP</span>
+        <span class="eyebrow">整体・骨格調整 / ねこもち占い・数秘術</span>
         <h1>totonoサロン</h1>
-        <p class="lead">からだを整え、自分を知る。</p>
+        <p class="lead">からだも、こころも、やさしく整う場所。</p>
         <p class="hero-copy">totonoサロンは、整体・骨格調整・トレーニングサポートと、ねこもち占い・数秘術・鑑定書による自己理解サポートを1ページで案内する公式HPです。</p>
         <div class="actions">
           <a class="button primary" href="#contact">予約・問い合わせする</a>
-          <a class="button pink" href="#paths">2つの入口を見る</a>
+          <a class="button pink" href="#quick-menu">2つの入口を見る</a>
         </div>
       </div>
     </section>
 
-    <section id="paths" class="path-section" aria-label="整体とねこもち占いの入口">
-      <div class="wrap path-grid">
-        <article class="path-card body-care">
+    <section id="quick-menu" class="quick-menu" aria-label="整体とねこもち占いの入口">
+      <div class="wrap quick-grid">
+        <article class="quick-card body-care">
           <div>
-            <div class="path-label">BODY CARE</div>
+            <div class="label">Body Care</div>
             <h2>整体・骨格調整</h2>
             <p>肩こり、腰痛、姿勢、骨盤まわり、体型変化など。今のからだに合わせて、動きやすさと軽さを目指します。</p>
           </div>
@@ -432,15 +472,15 @@
             <li>骨盤ケア</li>
             <li>トレーニングサポート</li>
           </ul>
-          <div class="path-actions">
+          <div class="quick-actions">
             <a class="button primary" href="https://www.instagram.com/tomomi_body_support">Instagramを見る</a>
-            <a class="button" href="#body-care">詳しく見る</a>
+            <a class="button light" href="#body-care">詳しく見る</a>
           </div>
         </article>
 
-        <article class="path-card uranai">
+        <article class="quick-card uranai">
           <div>
-            <div class="path-label">NEKOMOCHI</div>
+            <div class="label">Nekomochi</div>
             <h2>ねこもち占い</h2>
             <p>数秘術をベースに、12匹のねこで本質・強み・本音・使命を読み解き、自分の扱い方を知るサポートです。</p>
           </div>
@@ -449,15 +489,23 @@
             <li>鑑定書・自己理解</li>
             <li>相性・親子・仕事の相談</li>
           </ul>
-          <div class="path-actions">
+          <div class="quick-actions">
             <a class="button primary" href="https://tomominblog.github.io/nekomochi-uranai/">ねこもちHPへ</a>
-            <a class="button" href="https://note.com/nekomochi_uranai">noteを読む</a>
+            <a class="button light" href="https://note.com/nekomochi_uranai">noteを読む</a>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="about">
+    <section aria-label="totonoサロンの特徴">
+      <div class="wrap feature-row">
+        <div class="feature"><span>01</span><strong>がんばりすぎない、やさしい整え方。</strong></div>
+        <div class="feature"><span>02</span><strong>からだとこころ、両方から見つめる。</strong></div>
+        <div class="feature"><span>03</span><strong>はじめてでも相談しやすい導線。</strong></div>
+      </div>
+    </section>
+
+    <section id="about" class="pink-bg">
       <div class="wrap">
         <div class="section-head">
           <div class="kicker">Concept</div>
@@ -522,7 +570,7 @@
       </div>
     </section>
 
-    <section id="nekomochi" class="soft-bg">
+    <section id="nekomochi" class="pink-bg">
       <div class="wrap">
         <div class="section-head">
           <div class="kicker">Nekomochi Uranai</div>
@@ -536,7 +584,7 @@
         </div>
         <div class="actions" style="justify-content:center;margin-top:30px">
           <a class="button primary" href="https://tomominblog.github.io/nekomochi-uranai/">ねこもちHPへ</a>
-          <a class="button" href="https://note.com/nekomochi_uranai">noteを読む</a>
+          <a class="button light" href="https://note.com/nekomochi_uranai">noteを読む</a>
         </div>
       </div>
     </section>
@@ -550,19 +598,19 @@
         </div>
         <div class="link-grid">
           <article class="link-card">
-            <div class="path-label">BODY</div>
+            <div class="label">Body</div>
             <h3>整体 Instagram</h3>
             <p>整体・骨格調整・トレーニングサポートの雰囲気や最新情報はこちら。</p>
             <a class="button primary" href="https://www.instagram.com/tomomi_body_support">Instagramを開く</a>
           </article>
           <article class="link-card">
-            <div class="path-label">NEKOMOCHI HP</div>
+            <div class="label">Nekomochi HP</div>
             <h3>ねこもち占い HP</h3>
             <p>本質のねこ診断や鑑定メニューなど、ねこもち占いの案内はこちら。</p>
             <a class="button primary" href="https://tomominblog.github.io/nekomochi-uranai/">HPを開く</a>
           </article>
           <article class="link-card">
-            <div class="path-label">NOTE</div>
+            <div class="label">Note</div>
             <h3>ねこもち占い note</h3>
             <p>ねこもち占いの考え方、12匹のねこ、自己理解の読みものはこちら。</p>
             <a class="button primary" href="https://note.com/nekomochi_uranai">noteを開く</a>
